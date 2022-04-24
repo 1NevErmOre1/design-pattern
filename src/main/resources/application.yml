@@ -1,0 +1,122 @@
+# Tomcat
+server:
+  undertow:
+    buffer-size: 1024
+    direct-buffers: true
+    threads:
+      io: 16
+      worker: 256
+  port: 9000
+  servlet:
+    context-path: /
+spring:
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  profiles:
+    active: dev
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+      enabled: true
+  main:
+    allow-bean-definition-overriding: true
+#mybatis
+#mybatis-plus:
+#  mapper-locations: classpath*:mapper/**/*.xml
+#  #???????package?????????
+#  typeAliasesPackage: com.yd.entity.**
+#  global-config:
+#    #????  0:"???ID??", 1:"????ID",2:"????ID (??????ID)", 3:"????ID UUID";
+#    id-type: 0
+#    #???? 0:"????",1:"? NULL ??"),2:"????"
+#    field-strategy: 1
+#    #???????
+#    db-column-underline: true
+#    #??mapper ????
+#    refresh-mapper: true
+#    #??????????
+#    #capital-mode: true
+#    # Sequence?????????
+#    #key-generator: com.baomidou.mybatisplus.incrementer.OracleKeyGenerator
+#    #??????hmqtks8w.sql.tencentcdb.com:6346
+#    logic-delete-value: -1
+#    logic-not-delete-value: 0
+#    #???????????
+#    #meta-object-handler: com.baomidou.springboot.xxx
+#    #???SQL???
+#  configuration:
+#    map-underscore-to-camel-case: true
+#    cache-enabled: false
+#    call-setters-on-nulls: true
+##    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+mybatis-plus:
+  mapper-locations: classpath*:mapper/**/*.xml
+  typeAliasesPackage: com.yd.entity.**
+  configuration:
+    call-setters-on-nulls: true
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+##pagehelper????
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+omg:
+  api-secret: 0xqyvkOtUyJAYrA5
+  base-url: https://omg.sumwhy.com/manager/openApi/
+  wx-robot:
+    enabled: true
+    wx-robot-url: https://open.feishu.cn/open-apis/bot/v2/hook/6c893bb9-2ba9-4b53-85db-800458173cd3
+  allowIps: 115.231.104.*
+
+
+jasypt:
+  encryptor:
+    password: ahfga
+
+logging:
+  level:
+    springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator: off
+    com.yd.dao.mini:
+      YdSellRecordShowMapper:
+        selectRecordList: off
+        insertRecord: off
+      YdSellRecordRecallMapper:
+        insertRecord: off
+        selectRecordList: off
+      YdSellRecordOldMarketMapper:
+        insertRecord: off
+        selectRecordList: off
+    com.yd.dao.mini.YdActivityMsgLogMapper: off
+byte-dance:
+  open:
+    key: aw8g9evji0w5vfha
+    secret: c6cb5812489a9b8e16278c374c6b7c7a
+    log-enable: true
+
+tencent:
+  key: SA6BZ-L2UKF-ZPKJ5-N33DR-OIPWV-HDBLQ
+  sk: l2ui9DZvoXeSI21hr80ANrzW3CXQ8oH
+
+lark:
+  app-id: cli_a06c68c346f8500b
+  app-secret: v84vBgx2X2pu8Pcjb297zg8WQ7Em40wa
+  verification-token: pSC5dLn6fEPp92li9xisFcAIysgGDdsB
+
+feign:
+  okhttp:
+    enabled: true
+  httpclient:
+    enabled: false
+
+kuka:
+  open:
+    base-url: http://120.55.227.104:8080/restcloud/
