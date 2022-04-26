@@ -11,11 +11,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 class DesignPatternApplicationTests {
 
     @Test
-    void contextLoads() {
+    void contextLoads(){
         String symbol = "*";
-        double a = 1.4;
+        double a= 1.4;
         double b = 1.6;
-        BaseCalculate operate = OperationSimpleFactory.createOperate(symbol);
+          BaseCalculate operate = OperationSimpleFactory.createOperate(symbol);
         operate.setFirstNum(a);
         operate.setSecondNum(b);
         System.out.println(operate.getResult());

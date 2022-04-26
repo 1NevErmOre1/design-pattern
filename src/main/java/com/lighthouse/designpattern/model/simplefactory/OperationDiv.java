@@ -12,7 +12,7 @@ public class OperationDiv extends BaseCalculate{
 
     @Override
     public double getResult(){
-        return super.getFirstNum() / super.getSecondNum();
+        return getFirstNum() / getSecondNum();
     }
 
 
